@@ -1,0 +1,11 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2825
+
+You can filter text in vim by executing the following command 
+:%!filter_executable
+With an appropriate collection of filters, this feature can help to format text or source code, pretty print, or do advanced editing. 
+However, each filter has to be in your $PATH (unless you want to specify the path manually), and you have to remember the name of the program.
+Also, if you have many filters, organizing them can be complicated. You may be tempted to give them long names, or you may be feeling that you end up clogging your $PATH with numerous filters that you only use in rare situations.
+
+This plugin helps to solve this problem. You maintain your filter scripts inside of your vim folder, in a folder 'filters' with subfolders per filetype (~/.vim/filters/all for filters that are always available).
+
+You can then apply a filter both with an Ex command (:Filter) and with a shortcut (\f in normal mode, <C-L>f in insert mode, by default). The plugin looks in ~/.vim/filters for filter scripts appropriate to the file type, and allows you to select one, interactively. The given current range is then filtered through the script.
